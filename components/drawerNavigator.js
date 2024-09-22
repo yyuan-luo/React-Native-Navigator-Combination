@@ -1,29 +1,25 @@
 import React from "react";
-import {View, Text} from "react-native";
-import { createDrawerNavigator } from "@react-navigation/drawer";
+import {createDrawerNavigator, DrawerContentScrollView, DrawerItem} from "@react-navigation/drawer";
 import BottomNavigator from "./bottomTabNavigator";
-
-const UserPage = () => {
-    return (
-        <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-            <Text>This is the user page</Text>
-        </View>
-    )
-}
 
 const Drawer = createDrawerNavigator();
 
+
+function CustomDrawerContent(props) {
+    return (
+        <DrawerContentScrollView {...props}>
+            <DrawerItem label="Profile" onPress={() => props.navigation.navigate("Profile")}/>
+            <DrawerItem label="Notification" onPress={() => props.navigation.navigate("Notification")}/>
+        </DrawerContentScrollView>
+    );
+}
+
 const DrawerNavigator = () => {
     return (
-        <Drawer.Navigator initialRouteName="Start">
+        <Drawer.Navigator drawerContent={(props) => <CustomDrawerContent {...props} />}>
             <Drawer.Screen
                 name="start"
                 component={BottomNavigator}
-                options={{ headerShown: true }}
-            />
-            <Drawer.Screen
-                name="user"
-                component={UserPage}
                 options={{ headerShown: true }}
             />
         </Drawer.Navigator>

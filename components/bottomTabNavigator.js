@@ -1,6 +1,7 @@
 import React from "react";
 import {View, Text} from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import ProfileStackNavigator from "./profileStackNavigator";
 
 const HomePage = () => {
     return (
@@ -10,10 +11,10 @@ const HomePage = () => {
     )
 }
 
-const TestPage = () => {
+const SearchPage = () => {
     return (
         <View style={{flex: 1, justifyContent: "center", alignItems: "center"}}>
-            <Text>This is the test page</Text>
+            <Text>This is the search page</Text>
         </View>
     )
 }
@@ -29,9 +30,18 @@ const BottomNavigator = () => (
             options={{ headerShown: false }}
         />
         <BottomTabScreen
-            name="Test"
-            component={TestPage}
+            name="Search"
+            component={SearchPage}
             options={{ headerShown: false }}
+        />
+        <BottomTabScreen
+            name="Profile"
+            component={ProfileStackNavigator}
+            options={{
+                tabBarButton: () => null, // Hide the tab
+                tabBarVisible: false, // In some versions of React Navigation, use this too
+                headerShown: false, // Hide the header if desired
+            }}
         />
     </BottomTabNavigator>
 );

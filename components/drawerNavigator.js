@@ -9,7 +9,6 @@ function CustomDrawerContent(props) {
     return (
         <DrawerContentScrollView {...props}>
             <DrawerItem label="Profile" onPress={() => props.navigation.navigate("Profile")}/>
-            <DrawerItem label="Notification" onPress={() => props.navigation.navigate("Notification")}/>
         </DrawerContentScrollView>
     );
 }

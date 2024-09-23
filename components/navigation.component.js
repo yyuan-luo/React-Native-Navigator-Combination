@@ -1,9 +1,9 @@
 import { NavigationContainer } from "@react-navigation/native";
-import DrawerNavigator from "./drawerNavigator";
+import BottomNavigator from "./bottomTabNavigator";
 
 const AppNavigator = () => (
     <NavigationContainer>
-        <DrawerNavigator />
+        <BottomNavigator />
     </NavigationContainer>
 );
 

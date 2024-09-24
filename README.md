@@ -3,7 +3,7 @@ This project demonstrates a navigation structure inspired by LinkedIn's mobile a
 BottomTabNavigator, DrawerNavigator, and StackNavigator in React Native.
 
 ## Demo
-![](./demo.gif)
+<img src="./demo.gif" width="280"/>
 
 In this demo, the bottom tab navigator remains visible across different screens, even when navigating through the drawer.
 When a drawer item is selected, a stack screen with a return button is presented.
